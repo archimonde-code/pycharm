@@ -1,6 +1,3 @@
-from flask import current_app, request, app
-from flask_restful import Resource, abort
-from flask_sqlalchemy import Pagination
 from flask import Flask, json
 
 server = Flask(__name__)
@@ -12,7 +9,7 @@ def index():
     return json.dumps(res, ensure_ascii=False)
 
 
-@server.route('/reg', methods=['get'])
+@server.route('/reg', methods=['post'])
 def reg():
     res = {'msg': 'reg接口', 'msg_code': 200}
     return json.dumps(res, ensure_ascii=False)
